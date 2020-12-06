@@ -60,7 +60,7 @@ function prepareDownload(string, pattern) {
 	img.src = pattern.toDataUri();
 }
 
-var changeEvent = onChange($('#string'), function (val) {
+var changeEvent = onChange(document.getElementById('#string'), function (val) {
 	var pattern = GeoPattern.generate(val);
 
 	var bg = next();
@@ -77,7 +77,7 @@ var changeEvent = onChange($('#string'), function (val) {
 
 // Some browsers persist field values between refresh
 $(function () {
-	$('#string')
+	document.getElementById('#string')
 		.val('  start typing...  ')
 		.focus();
 	changeEvent.trigger();
