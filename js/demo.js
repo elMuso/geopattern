@@ -60,15 +60,15 @@ function prepareDownload(string, pattern) {
 	img.src = pattern.toDataUri();
 }
 
-var changeEvent = onChange(document.getElementById('#string'), function (val) {
+var changeEvent = onChange($('#string'), function (val) {
 	var pattern = GeoPattern.generate(val);
 
 	var bg = next();
-	document.getElementById('#bg-' + bg.next)
+	$('#bg-' + bg.next)
 		.css('background-image', pattern.toDataUrl())
 		.stop()
 		.fadeIn(fadeOptions);
-	document.getElementById('#bg-' + bg.prev)
+	$('#bg-' + bg.prev)
 		.stop()
 		.fadeOut(fadeOptions);
 
@@ -77,7 +77,7 @@ var changeEvent = onChange(document.getElementById('#string'), function (val) {
 
 // Some browsers persist field values between refresh
 $(function () {
-	document.getElementById('#string')
+	$('#string')
 		.val('  start typing...  ')
 		.focus();
 	changeEvent.trigger();
