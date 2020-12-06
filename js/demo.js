@@ -64,11 +64,11 @@ var changeEvent = onChange(document.getElementById('#string'), function (val) {
 	var pattern = GeoPattern.generate(val);
 
 	var bg = next();
-	$('#bg-' + bg.next)
+	document.getElementById('#bg-' + bg.next)
 		.css('background-image', pattern.toDataUrl())
 		.stop()
 		.fadeIn(fadeOptions);
-	$('#bg-' + bg.prev)
+	document.getElementById('#bg-' + bg.prev)
 		.stop()
 		.fadeOut(fadeOptions);
 
